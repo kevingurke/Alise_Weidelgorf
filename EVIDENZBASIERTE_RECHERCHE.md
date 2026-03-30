@@ -72,6 +72,9 @@
 | 17 | 2025 | RSW Recht | Trotz Abmahnung: Weber beharrt auf Vorwürfen | [rsw.beck.de](https://rsw.beck.de/aktuell/daily/meldung/detail/plagiatssucher-weber-beharrt-auf-vorwuerfen-gegen-brosius-gersdorf) | Rechtsstreit | ⏳ |
 | 18 | 2025 | RSW Recht | Neue Plagiatsvorwürfe: Brosius-Gersdorf wehrt sich | [rsw.beck.de](https://rsw.beck.de/aktuell/daily/meldung/detail/neue-plagiatsvorwuerfe-brosius-gersdorf-stefan-weber-anwalt) | Vorwürfe | ⏳ |
 | 19 | 2025 | BR24 | Wie die Kampagne ins Laufen kam | [br24.de](https://www.br.de/nachrichten/deutschland/wie-die-kampagne-gegen-frauke-brosius-gersdorf-ins-laufen-kam,UFBTsBG) | Kampagnen-Analyse | ⏳ |
+| 20 | 2025 | FAZ | Plagiatsvorwürfe gegen Saskia Ludwig | [faz.net](https://www.faz.net/aktuell/politik/inland/plagiatsvorwuerfe-gegen-cdu-abgeordnete-saskia-ludwig-uni-potsdam-muss-entscheiden-110599436.html) | Uni Potsdam Skandal | ⏳ |
+| 21 | 2025 | Spiegel | Uni Potsdam sieht Anfangsverdacht bei Saskia Ludwig | [spiegel.de](https://www.spiegel.de/panorama/bildung/universitaet-potsdam-sieht-anfangsverdacht-bei-doktorarbeit-von-saskia-ludwig-a-cfd8664a-4a1d-45a2-947b-af6dd3f62161) | Plagiatsvorwürfe Ludwig | ⏳ |
+| 22 | 2025 | Cicero | "Hinreichender Anfangsverdacht" | [cicero.de](https://www.cicero.de/kultur/hinreichender-anfangsverdacht-neue-stilblute-im-fall-brosius-gersdorf) | Uni Potsdam Skandal | ⏳ |
 
 ### B. Spezialisierte Quellen
 
@@ -174,9 +177,43 @@
 - **Sexistische Hetze** ("Die Richterin des Grauens", "verbrannte Hexe")
 - **Todesdrohungen** (erwähnt im taz-Interview)
 
----
+#### D. Weber's Rückzug
+**Tagesschau Kommentar:**
+> "Der Vorwurf, wissenschaftlich nicht sauber gearbeitet zu haben, hielt keinen halben Tag, weil der sogenannte 'Plagiatsjäger' selbst öffentlich zurückruderte. Kein Plagiat - das bestätigt mittlerweile auch ein Kurzgutachten."
 
-## 4. AKTEURE & NETZWERK
+**Fazit:** Die Kampagne nutzte Weber's anfängliche Vorwürfe, die sich als haltlos erwiesen.
+
+### 3.4 DER SASKIA LUDWIG SKANDAL
+
+#### A. Die Ironie
+| Aspekt | Detail | Quelle |
+|--------|--------|--------|
+| **Saskia Ludwig (CDU)** | Eine der schärfsten Kritikerinnen von Brosius-Gersdorf | Spiegel |
+| **Forderung von Ludwig** | Brosius-Gersdorf solle Lehrstuhl ruhen lassen bis Plagiatsvorwürfe ausgeräumt | Spiegel |
+| **Ludwig's Eigene Dissertation** | 2007: "Die Aufgabenauslagerung in Landesbetriebe..." | FAZ |
+
+#### B. Plagiatsvorwürfe gegen Ludwig
+| Detail | Information | Quelle |
+|--------|-------------|--------|
+| **Datum Vorwürfe** | Juli 2025 | Spiegel, rbb24 |
+| **Uni Potsdam Status** | "hinreichender Anfangsverdacht" | Cicero, Spiegel |
+| **Prüfungsverfahren** | Einige Monate Dauer erwartet | Spiegel |
+| **Quelle der Vorwürfe** | Plagiatsjäger (extern) | Spiegel |
+
+#### C. Uni Potsdam Skandal
+| Problem | Detail | Quelle |
+|---------|--------|--------|
+| **Verstoß gegen Satzung** | Verdachtsgrad öffentlich gemacht (§9 Abs.3 Satzung verlangt Vertraulichkeit) | Cicero |
+| **Befangenheit Ombuds-Vertreter** | Juraprofessor aus Öffentlichem Recht = Kollege von Brosius-Gersdorf | Cicero |
+| **Befangenheit Dekan** | Professor Öffentliches Recht, unmittelbarer Kollege | Cicero |
+| **Befangenheit Kommissionsvorsitz** | Professor Öffentliches Recht, Kollege | Cicero |
+
+**Cicero Analyse:**
+> "Saskia Ludwig hatte sich in den letzten Wochen äußerst meinungsstark gegen seine unmittelbare Fachbereichs- und Institutskollegin Frauke Brosius-Gersdorf positioniert."
+
+> "Für den – auch in Brandenburg geltenden – § 21 Abs. 1 des Verwaltungsverfahrensgesetzes des Bundes genügt der bloße Anschein, den man vorliegend wohl kaum mehr verneinen kann."
+
+---
 
 ### 4.1 Unterstützer
 
@@ -195,7 +232,8 @@
 | Name/Organisation | Rolle | Belege |
 |-------------------|-------|--------|
 | **Beatrix von Storch (AfD)** | Haupt-Akteurin Kampagne | taz Interview |
-| **Stefan Weber (Plagiatsjäger)** | Plagiatsvorwürfe | Welt, Spiegel |
+| **Saskia Ludwig (CDU)** | Eine der schärfsten Kritikerinnen; eigene Dissertation 2025 geprüft ("hinreichender Anfangsverdacht") | Cicero, Spiegel |
+| **Stefan Weber (Plagiatsjäger)** | Plagiatsvorwürfe; ruderte selbst zurück ("Kein Plagiat") | Welt, Spiegel, Tagesschau |
 | **CDU/CSU-Abgeordnete** | Widerstand gegen Wahl | Tagesschau |
 | **Friedrich Merz (CDU)** | Kanzler, unter Druck gesetzt | taz Interview |
 | **Katholischer Erzbischof** | Diffamierung | taz Interview |
@@ -267,12 +305,16 @@
 
 | Priorität | URL | Status |
 |-----------|-----|--------|
-| 1 | https://taz.de/Frauke-Brosius-Gersdorf-im-Gespraech/!6147056/ | ⏳ |
-| 2 | https://www.tagesschau.de/inland/innenpolitik/brosius-gersdorf-verfassungsgericht-100.html | ⏳ |
-| 3 | https://www.tagesschau.de/inland/innenpolitik/interview-plagiatsforscher-100.html | ⏳ |
-| 4 | https://verfassungsblog.de/stellungnahme-zur-causa-frauke-brosius-gersdorf/ | ⏳ |
-| 5 | https://www.polisphere.eu/de/analyse-zur-kampagne-gegen-frauke-brosius-gersdorf/ | ⏳ |
-| 6 | https://plagiatsgutachten.com/blog/dissertation-frauke-brosius-gersdorf/ | ⏳ |
+| 1 | https://taz.de/Frauke-Brosius-Gersdorf-im-Gespraech/!6147056/ | ⚠️ Manuell erforderlich |
+| 2 | https://www.tagesschau.de/inland/innenpolitik/brosius-gersdorf-verfassungsgericht-100.html | ⚠️ Manuell erforderlich |
+| 3 | https://www.tagesschau.de/inland/innenpolitik/interview-plagiatsforscher-100.html | ⚠️ Manuell erforderlich |
+| 4 | https://verfassungsblog.de/stellungnahme-zur-causa-frauke-brosius-gersdorf/ | ⚠️ Manuell erforderlich |
+| 5 | https://www.polisphere.eu/de/analyse-zur-kampagne-gegen-frauke-brosius-gersdorf/ | ⚠️ Manuell erforderlich |
+| 6 | https://plagiatsgutachten.com/blog/dissertation-frauke-brosius-gersdorf/ | ⚠️ Manuell erforderlich |
+| 7 | https://www.cicero.de/kultur/hinreichender-anfangsverdacht-neue-stilblute-im-fall-brosius-gersdorf | ⚠️ Manuell erforderlich |
+| 8 | https://www.tagesschau.de/kommentar/brosius-gersdorf-122.html | ⚠️ Manuell erforderlich |
+
+**Hinweis:** Automatische Archivierung via curl nicht möglich. Manuelle Archivierung via https://web.archive.org/save/ empfohlen.
 
 ---
 

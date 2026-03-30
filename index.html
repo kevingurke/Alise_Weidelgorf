@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untersuchung: Brosius-Gersdorf & Weidel | Investigativer Report</title>
+    <style>
+        :root {
+            --afd-blue: #00A6E4;
+            --afd-dark: #00347C;
+            --afd-gold: #FFD100;
+            --dark-bg: #0A1628;
+            --card-bg: #0F2240;
+            --text-light: #E8EEF4;
+            --text-muted: #8BA3C7;
+            --danger: #E63946;
+            --warning: #F4A261;
+            --success: #2A9D8F;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--afd-dark) 0%, #001D4A 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--afd-gold);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .subtitle {
+            color: var(--afd-gold);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav {
+            background: rgba(0, 52, 124, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav a:hover {
+            background: var(--afd-blue);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--afd-blue);
+        }
+        
+        .intro h2 {
+            color: var(--afd-gold);
+            margin-bottom: 20px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .person-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .person-header {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--afd-dark) 0%, #001D4A 100%);
+            text-align: center;
+        }
+        
+        .person-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .person-header .role {
+            color: var(--afd-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .person-body {
+            padding: 30px;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat {
+            background: rgba(0,166,228,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--afd-blue);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--afd-blue);
+            color: var(--afd-gold);
+        }
+        
+        .controversy-list {
+            list-style: none;
+        }
+        
+        .controversy-item {
+            background: rgba(230, 57, 70, 0.1);
+            border-left: 3px solid var(--danger);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .controversy-item .date {
+            font-size: 0.75rem;
+            color: var(--danger);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .controversy-item h4 {
+            margin-bottom: 8px;
+        }
+        
+        .controversy-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .timeline {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline h2 {
+            color: var(--afd-gold);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .timeline-date {
+            min-width: 100px;
+            color: var(--afd-blue);
+            font-weight: 700;
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .analysis-box {
+            background: linear-gradient(135deg, rgba(0,166,228,0.2) 0%, rgba(0,52,124,0.2) 100%);
+            border: 1px solid var(--afd-blue);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .analysis-box h2 {
+            color: var(--afd-gold);
+            margin-bottom: 20px;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .analysis-point {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .analysis-point .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .analysis-point h4 {
+            color: var(--afd-blue);
+            margin-bottom: 10px;
+        }
+        
+        .sources {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .sources h2 {
+            color: var(--afd-gold);
+            margin-bottom: 25px;
+        }
+        
+        .source-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .source-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .source-item a {
+            color: var(--afd-blue);
+            text-decoration: none;
+        }
+        
+        .source-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .warning-banner {
+            background: linear-gradient(90deg, var(--danger), #9B2335);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            background: var(--afd-dark);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .source-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>UNTERSUCHUNGSBERICHT</h1>
+        <p class="subtitle">Frauke Brosius-Gersdorf & Alice Weidel</p>
+    </header>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="#vergleich">Vergleich</a></li>
+            <li><a href="#brosius">Brosius-Gersdorf</a></li>
+            <li><a href="#weidel">Alice Weidel</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#analyse">Analyse</a></li>
+            <li><a href="#quellen">Quellen</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>Investigativer Report</h2>
+            <p>Diese Untersuchung analysiert zwei der kontroversesten politischen Figuren Deutschlands im Jahr 2025: <strong>Frauke Brosius-Gersdorf</strong> (SPD-Kandidatin für das Bundesverfassungsgericht) und <strong>Alice Weidel</strong> (AfD-Kanzlerkandidatin). Beide Frauen repräsentieren entgegengesetzte Enden des politischen Spektrums - doch ihre mediale Inszenierung und die Kampagnen gegen sie zeigen bemerkenswerte Parallelen.</p>
+        </div>
+        
+        <div class="warning-banner">
+            ⚠️ INHALT DIENT NUR ZU INVESTIGATIVEN/ANALYTISCHEN ZWECKEN - ALLE QUELLEN SIND ÖFFENTLICH VERFÜGBAR
+        </div>
+        
+        <section id="vergleich">
+            <h2 class="section-title">Direkter Vergleich</h2>
+            <div class="comparison-grid">
+                <!-- Brosius-Gersdorf -->
+                <div class="person-card" id="brosius">
+                    <div class="person-header">
+                        <h3>Frauke Brosius-Gersdorf</h3>
+                        <p class="role">Verfassungsrichterin (Kandidatin)</p>
+                    </div>
+                    <div class="person-body">
+                        <div class="stat-grid">
+                            <div class="stat">
+                                <div class="stat-value">~54</div>
+                                <div class="stat-label">Alter</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">SPD</div>
+                                <div class="stat-label">Partei</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">Jura</div>
+                                <div class="stat-label">Fachgebiet</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">1997</div>
+                                <div class="stat-label">Promotion</div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="section-title">Kontroversen</h4>
+                        <ul class="controversy-list">
+                            <li class="controversy-item">
+                                <div class="date">Juli 2025</div>
+                                <h4>Plagiatsvorwürfe</h4>
+                                <p>Stefan Weber wirft Ghostwriting vor (91 Textstellen). Dissertation steht in Verdacht, von Ehemann mitgeschrieben.</p>
+                            </li>
+                            <li class="controversy-item">
+                                <div class="date">Juli 2025</div>
+                                <h4>Kampagne durch AfD</h4>
+                                <p>Beatrix von Storch führt Kampagne wegen Abtreibungspositionen. "Hardcore-Abtreibungsbefürworterin"</p>
+                            </li>
+                            <li class="controversy-item">
+                                <div class="date">Juli 2025</div>
+                                <h4>Rückzug</h4>
+                                <p>Zieht Kandidatur zurück nach Kampagne. SPD und 300+ Juristen verteidigten sie.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Alice Weidel -->
+                <div class="person-card" id="weidel">
+                    <div class="person-header">
+                        <h3>Alice Weidel</h3>
+                        <p class="role">AfD-Kanzlerkandidatin</p>
+                    </div>
+                    <div class="person-body">
+                        <div class="stat-grid">
+                            <div class="stat">
+                                <div class="stat-value">46</div>
+                                <div class="stat-label">Alter</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">AfD</div>
+                                <div class="stat-label">Partei</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">VWL</div>
+                                <div class="stat-label">Fachgebiet</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2011</div>
+                                <div class="stat-label">Promotion</div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="section-title">Kontroversen</h4>
+                        <ul class="controversy-list">
+                            <li class="controversy-item">
+                                <div class="date">Januar 2025</div>
+                                <h4>Hitler-Äußerung</h4>
+                                <p>Mit Elon Musk: "Hitler war ein Kommunist". Historiker widersprechen. Gauland und Chrupalla distanzieren sich.</p>
+                            </li>
+                            <li class="controversy-item">
+                                <div class="date">2018-2025</div>
+                                <h4>Spendenaffäre</h4>
+                                <p>~900.000 € illegale Schweizer Spenden. AfD zu Strafen verurteilt. Weidel widerspricht sich (Partei vs. persönlich).</p>
+                            </li>
+                            <li class="controversy-item">
+                                <div class="date">Mai 2018</div>
+                                <h4>"Burkas"-Rede</h4>
+                                <p>Rüge durch Bundestagspräsident Schäuble. "Generationenersatz"-Theorie zitiert.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="timeline" class="timeline">
+            <h2>Chronologische Timeline 2024-2025</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h4>Weidel wird AfD-Kanzlerkandidatin</h4>
+                    <p>Alice Weidel offiziell als Kandidatin für Bundestagswahl 2025 nominiert.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 2025</div>
+                <div class="timeline-content">
+                    <h4>X-Spaces mit Elon Musk</h4>
+                    <p>Weidel und Musk diskutieren 75 Minuten. Hitler-Äußerung sorgt für internationale Empörung.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2025</div>
+                <div class="timeline-content">
+                    <h4>ZDF-Doku und Interview-Abbruch</h4>
+                    <p>Weidel bricht Interview ab nach Fragen zu Wohnsitz in der Schweiz.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Sommer 2025</div>
+                <div class="timeline-content">
+                    <h4>SPD nominiert Brosius-Gersdorf</h4>
+                    <p>Frauke Brosius-Gersdorf als Kandidatin für Bundesverfassungsgericht nominiert.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Juli 2025</div>
+                <div class="timeline-content">
+                    <h4>Kampagne gegen Brosius-Gersdorf</h4>
+                    <p>AfD (Beatrix von Storch), Abtreibungsgegner und Stefan Weber starten Kampagne. Plagiatsvorwürfe.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Juli 2025</div>
+                <div class="timeline-content">
+                    <h4>Saskia Ludwig Skandal</h4>
+                    <p>CDU-Politikerin kritisiert Brosius-Gersdorf - aber eigene Dissertation unter Plagiatsverdacht.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Juli 2025</div>
+                <div class="timeline-content">
+                    <h4>Rückzug Brosius-Gersdorf</h4>
+                    <p>Kandidatur zurückgezogen. SPD-Chefin Bas: "Rechte Netzwerke haben gewonnen."</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="analyse" class="analysis-box">
+            <h2>Kritische Analyse</h2>
+            <p>Die mediale Gegenüberstellung von Brosius-Gersdorf und Weidel wirft kritische Fragen auf. Beide Frauen wurden 2025 zu Symbolfiguren einer polarisierten politischen Auseinandersetzung.</p>
+            
+            <div class="analysis-grid">
+                <div class="analysis-point">
+                    <div class="icon">🔍</div>
+                    <h4>Kontrast-Strategie</h4>
+                    <p>Brosius-Gersdorf wurde als "liberale Alternative" zu Weidel positioniert - ob beabsichtigt oder nicht.</p>
+                </div>
+                <div class="analysis-point">
+                    <div class="icon">⚡</div>
+                    <h4>Kampagnen-Ökonomie</h4>
+                    <p>Beide Kampagnen (gegen Brosius-Gersdorf und die von Weidel) folgten ähnlichen Mustern: Skandal über Substanz.</p>
+                </div>
+                <div class="analysis-point">
+                    <div class="icon">🎯</div>
+                    <h4>Wer profitierte?</h4>
+                    <p>Die AfD profitierte von der Brosius-Gersdorf-Kampagne durch Wählermobilisierung.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="quellen" class="sources">
+            <h2>Quellen & Referenzen</h2>
+            <div class="source-list">
+                <div class="source-item">
+                    <strong>Tagesschau</strong><br>
+                    <a href="https://www.tagesschau.de/inland/innenpolitik/brosius-gersdorf-verfassungsgericht-100.html" target="_blank">Kampagne gegen Brosius-Gersdorf</a>
+                </div>
+                <div class="source-item">
+                    <strong>Spiegel</strong><br>
+                    <a href="https://www.spiegel.de/politik/deutschland/alice-weidel-und-elon-musk-sprechen-bei-x-ueber-kommunisten-hitler-und-atomkraft-der-faktencheck-a-733e7687-13e4-4cde-b257-8b38cd0e0a26" target="_blank">Weidel Musk Interview Faktencheck</a>
+                </div>
+                <div class="source-item">
+                    <strong>taz</strong><br>
+                    <a href="https://taz.de/AfD-Spendenaffaere-um-Alice-Weidel/!5730150/" target="_blank">Spendenaffäre Weidel</a>
+                </div>
+                <div class="source-item">
+                    <strong>Plagiatsgutachten.com</strong><br>
+                    <a href="https://plagiatsgutachten.com/blog/ghostwriting-verdacht-brosius-gersdorf/" target="_blank">Ghostwriting-Verdacht Brosius-Gersdorf</a>
+                </div>
+                <div class="source-item">
+                    <strong>Verfassungsblog</strong><br>
+                    <a href="https://verfassungsblog.de/stellungnahme-zur-causa-frauke-brosius-gersdorf/" target="_blank">339 Rechtswissenschaftler Stellungnahme</a>
+                </div>
+                <div class="source-item">
+                    <strong>Wikipedia</strong><br>
+                    <a href="https://en.wikipedia.org/wiki/Alice_Weidel" target="_blank">Alice Weidel (EN)</a>
+                </div>
+                <div class="source-item">
+                    <strong>ZDF</strong><br>
+                    <a href="https://www.zdf.de/nachrichten/politik/deutschland/gauland-weidel-interview-hitler-aussage-100.html" target="_blank">Hitler-Aussage Reaktionen</a>
+                </div>
+                <div class="source-item">
+                    <strong>NZZ</strong><br>
+                    <a href="https://www.nzz.ch/schweiz/wohnsitz-steuern-spenden-alice-weidel-und-ihre-swiss-connections-ld.1872026" target="_blank">Weidel Schweiz Verbindungen</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>Investigativer Report - Erstellt für Analyse-Zwecke</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Alle Daten basieren auf öffentlich verfügbaren Quellen. Keine privaten Daten verwendet.</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.person-card, .timeline-item, .analysis-point').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
